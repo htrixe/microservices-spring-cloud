@@ -43,8 +43,28 @@ In the next lecture, make the below small change to support Spring Boot 3 and Sp
 
 # Docker
 
-rabbitmq
+## rabbitmq
 
-docker pull rabbitmq:3.11.0
-docker run --rm -it -p 5672:5672 rabbitmq:3.11.0
+- docker pull rabbitmq:3.11.0
+- docker run --rm -it -p 5672:5672 rabbitmq:3.11.0
+-----
+## docker hub
+- docker build -t springboot-docker-demo:0.1.RELEASE .
+- docker run -p 8080:8080 springboot-docker-demo
+- docker logs -f 143...
+- docker login
+- docket tag springboot-docker-demo htrix/springboot-docker-demo:0.1.RELEASE
+- docker images
+- docker push htrix/springboot-docker-demo:0.1.RELEASE
+- docker pull htrix/springboot-docker-demo
+
+## Mysql
+- docker run -p 3307:3306 --name localhost -e MYSQL_ROOT_PASSWORD=sasa -e MYSQL_DATABASE=employee_db -e MYSQL_USER=htrix -e MYSQL_PASSWORD=sasa -d mysql:0.0.31
+- docker exec -it localhost bash
+- mysql -u root -p
+- show databases
+- 
+
+
+
 
